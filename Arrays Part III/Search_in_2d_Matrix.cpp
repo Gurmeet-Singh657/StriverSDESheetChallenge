@@ -25,7 +25,7 @@ public:
         int col=matrix[0].size();
         while(start<=end)
         {
-            int mid=(start+end)/2;
+            int mid=start + (end-start)/2;
             int rowno=mid/col;
             int colno=mid%col;
             int val=matrix[rowno][colno];
