@@ -74,3 +74,30 @@ int main()
 	}
     return 0;
 }  // } Driver Code Ends
+// codestudio code
+#include<bits/stdc++.h>
+bool comparator(pair<int,int>& item1,pair<int,int>& item2)
+{
+    return ((item1.second*1.0)/item1.first)>((item2.second*1.0)/item2.first);
+}
+double maximumValue (vector<pair<int, int>>& items, int n, int w)
+{
+    // Write your code here.
+    // ITEMS contains {weight, value} pairs.
+    sort(items.begin(),items.end(),comparator);
+    double val=0.0;
+    for(int i=0;i<items.size();i++)
+    {
+        if(items[i].first<=w)
+        {
+            val+=(double)items[i].second;
+            w-=items[i].first;
+        }
+        else
+        {
+            val+=items[i].second*(w*1.0/items[i].first);
+            break;
+        }
+    }
+    return val;
+}
