@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // Recursive approach
+// TC-> exponential
 int f(int i,int j,string str1,string str2)
 {
     if(i<0)
@@ -17,6 +18,8 @@ int editDistance(string str1, string str2)
 }
 
 // Memoization
+// TC-> O(N*M)
+// SC-> O(N*M) + O(N*M)
 int f(int i,int j,string &str1,string &str2,vector<vector<int>>& dp)
 {
     if(i<0)
@@ -37,6 +40,8 @@ int editDistance(string str1, string str2)
 }
 
 // Memoization shifted by one index
+// TC-> O(N*M)
+// SC-> O(N*M) + O(N*M)
 int f(int i,int j,string &str1,string &str2,vector<vector<int>>& dp)
 {
     if(i==0)
@@ -57,6 +62,8 @@ int editDistance(string str1, string str2)
 }
 
 // Tabulation
+// TC-> O(N*M)
+// SC-> O(N*M)
 int editDistance(string str1, string str2)
 {
     int n=str1.length();
@@ -84,6 +91,8 @@ int editDistance(string str1, string str2)
 }
 
 // Space optimised
+// TC-> O(N*M)
+// SC-> O(M)
 int editDistance(string str1, string str2)
 {
     int n=str1.length();

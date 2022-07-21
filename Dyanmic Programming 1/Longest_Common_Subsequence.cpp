@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // Normal Recursion
+// TC-> exponential
+// SC-> O(N*M)
 int f(int i,int j,string s,string t)
 {
     if(i<0 || j<0) return 0;
@@ -8,6 +10,8 @@ int f(int i,int j,string s,string t)
     return max(f(i-1,j,s,t),f(i,j-1,s,t));
 }
 // Memoization
+// TC-> O(N*M)
+// SC-> O(N*M) + O(N*M)
 int f(int i,int j,string s,string t,vector<vector<int>>& dp)
 {
     if(i<0 || j<0) return 0;
@@ -16,6 +20,8 @@ int f(int i,int j,string s,string t,vector<vector<int>>& dp)
     return dp[i][j]=max(f(i-1,j,s,t,dp),f(i,j-1,s,t,dp));
 }
 // Memoization - After shifting of index
+// TC-> O(N*M)
+// SC-> O(N*M) + O(N*M)
 int f(int i,int j,string s,string t,vector<vector<int>> & dp)
 {
     if(i==0 || j==0) return 0;
@@ -31,6 +37,8 @@ int lcs(string s,string t)
     return f(n-1,m-1,s,t,dp);
 }
 // Tabulation
+// TC-> O(N*M)
+// SC-> O(N*M)
 int getLengthOfLCS(string & str1, string & str2) {
   // Write your code here.
     int n=str1.size();
@@ -57,6 +65,8 @@ int getLengthOfLCS(string & str1, string & str2) {
     return dp[n][m];
 }
 // Space Optimised
+// TC-> O(N*M)
+// SC-> O(M)
 int getLengthOfLCS(string & str1, string & str2) {
   // Write your code here.
     int n=str1.size();

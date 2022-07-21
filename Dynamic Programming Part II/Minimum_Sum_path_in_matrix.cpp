@@ -1,4 +1,5 @@
 // Recursion
+// TC-> exponential
 int f(int i,int j,vector<vector<int>>& grid)
 {
     if(i==0 && j==0) return grid[i][j];
@@ -12,6 +13,8 @@ int minSumPath(vector<vector<int>> &grid) {
     
 }
 // Memoization
+// TC-> O(N*M)
+// SC-> O(N*M) + O(N*M)
 int f(int i,int j,vector<vector<int>>& grid,vector<vector<int>>& dp)
 {
     if(i==0 && j==0) return grid[i][j];
@@ -27,6 +30,8 @@ int minSumPath(vector<vector<int>> &grid) {
     
 }
 // Tabulation
+// TC-> O(N*M)
+// SC-> O(N*M)
 int minSumPath(vector<vector<int>> &grid) {
     vector<vector<int>> dp(grid.size(),vector<int>(grid[0].size(),0));
     for(int i=0;i<grid.size();i++)
@@ -46,6 +51,8 @@ int minSumPath(vector<vector<int>> &grid) {
     
 }
 // Space optimisation
+// TC-> O(N*M)
+// SC-> O(M)
 int minSumPath(vector<vector<int>> &grid) {
     vector<int> prev(grid[0].size(),-1);
     for(int i=0;i<grid.size();i++)

@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 // Simple Recursive
+// TC-> exponential
+// SC-> O(N*N)
 int f(int arr[],int ind,int n,int prev_ind)
 {
     if(ind==n)
@@ -17,6 +19,8 @@ int longestIncreasingSubsequence(int arr[], int n)
 }
 
 // Memoization
+// TC-> O(N*N)
+// SC-> O(N*N) + O(N*N)
 #include<bits/stdc++.h>
 int f(int arr[],int ind,int n,int prev_ind,vector<vector<int>>& dp)
 {
@@ -35,6 +39,8 @@ int longestIncreasingSubsequence(int arr[], int n)
 }
 
 // Tabulation
+// TC-> O(N*N)
+// SC-> O(N*N)
 #include<bits/stdc++.h>
 int longestIncreasingSubsequence(int arr[], int n)
 {
@@ -53,6 +59,8 @@ int longestIncreasingSubsequence(int arr[], int n)
 }
 
 // Space optimisation
+// TC-> O(N*N)
+// SC-> O(N)
 #include<bits/stdc++.h>
 int longestIncreasingSubsequence(int arr[], int n)
 {
@@ -70,7 +78,7 @@ int longestIncreasingSubsequence(int arr[], int n)
     }
    return next[0];
 }
-// O(n2) solution
+// O(N*N) solution
 #include<bits/stdc++.h>
 int longestIncreasingSubsequence(int arr[], int n)
 {
@@ -125,6 +133,7 @@ int longestIncreasingSubsequence(int arr[], int n)
 }
 
 // Very optimised Way using Binary Search
+// TC-> O(n * logn)
 #include<bits/stdc++.h>
 int longestIncreasingSubsequence(int arr[], int n)
 {

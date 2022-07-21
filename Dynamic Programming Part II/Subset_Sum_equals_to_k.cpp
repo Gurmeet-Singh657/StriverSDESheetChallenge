@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 // Simple recursion
+// TC-> exponential
 bool f(int arr[],int ind,int target)
 {
    if(target==0) return true;
@@ -14,6 +15,8 @@ bool f(int arr[],int ind,int target)
    return take | nottake;
 }
 // Memoization
+// TC-> O(N*TARGET)
+// SC-> O(N*TARGET) + O(N)
 bool f(int arr[],int ind,int target,vector<vector<int>>& dp)
 {
     if(target==0) return true;
@@ -26,6 +29,8 @@ bool f(int arr[],int ind,int target,vector<vector<int>>& dp)
     return dp[ind][target]=take|nottake;
 }
 // Tabulation
+// TC-> O(N*TARGET)
+// SC-> O(N*TARGET)
 bool f(int arr[],int target,int n)
 {
     vector<vector<bool>> dp(n,vector<bool>(target,0));
@@ -48,7 +53,8 @@ bool f(int arr[],int target,int n)
     return dp[n-1][target]; // means last tk target bn paya hai
 }
 // Space optimise
-// SC - O(target)
+// TC-> O(N*TARGET)
+// SC-> O(TARGET)
 bool fspaceopt(int arr[],int target,int n)
 {
     int k=target;

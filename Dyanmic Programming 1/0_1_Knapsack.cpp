@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Recursion
+// TC-> exponential
 int findbestpossiblevalue(int wt[],int val[],int ind,int weight)
 {
     if(ind==0)
@@ -33,6 +35,8 @@ int f(int wt[],int val[],int ind,int weight,vector<vector<int>>& dp)
     return dp[ind][weight]=max(take,nottake);
 }
 // Tabulation
+// Time complexity - O(N*W)
+// Space complexity - O(N*W)
 int f(int wt[],int val[],int n,int weight)
 {
     vector<vector<int>> dp(n,vector<int>(weight+1,0));
@@ -56,6 +60,8 @@ int f(int wt[],int val[],int n,int weight)
     return dp[n-1][weight];
 }
 // Space optimised
+// Time complexity - O(N*W)
+// Space complexity - O(2*W)
 int f(int wt[],int val[],int n,int weight)
 {
     vector<int> prev(weight+1,0),curr(weight+1,0);
@@ -78,6 +84,8 @@ int f(int wt[],int val[],int n,int weight)
     return prev[weight];
 }
 // More space optimised
+// Time complexity - O(N*W)
+// Space complexity - O(W)
 int f(int wt[],int val[],int n,int weight)
 {
     vector<int> prev(weight+1,0);

@@ -1,4 +1,5 @@
 // Recursive solution
+// TC-> O(N*N)
 int f(int ind,vector<int>& rack,int n,int prev)
 {
     if(ind==n)
@@ -14,6 +15,8 @@ int maxIncreasingDumbbellsSum(vector<int> &rack, int n)
 	return f(0,rack,n,0);
 }
 // Memoization solution
+// TC-> O(N*N)
+// SC-> O(N*N) + O(N)
 int f(int ind,vector<int>& rack,int n,int prev,vector<vector<int>>& dp)
 {
     if(ind==n)
@@ -34,6 +37,8 @@ int maxIncreasingDumbbellsSum(vector<int> &rack, int n)
 	return f(0,rack,n,0,dp);
 }
 // Tabulation solution
+// TC-> O(N*N)
+// SC-> O(N*N)
 int maxIncreasingDumbbellsSum(vector<int> &rack, int n)
 {
     int maxi=-1;
@@ -54,6 +59,8 @@ int maxIncreasingDumbbellsSum(vector<int> &rack, int n)
 	return dp[0][0];
 }
 // Space optimisation solution
+// TC-> O(N*N)
+// SC-> O(N)
 int maxIncreasingDumbbellsSum(vector<int> &rack, int n)
 {
     int maxi=-1;

@@ -1,4 +1,5 @@
 // Simple Recursive Solution
+// TC-> exponential
 int f(int i,int j,vector<int>& arr)
 {
     if(i==j)
@@ -16,6 +17,8 @@ int matrixMultiplication(vector<int> &arr, int N)
     return f(1,N-1,arr);
 }
 // Memoization
+// TC-> O(N*N*N)
+// SC-> O(N*N) + O(N)
 int f(int i,int j,vector<int>& arr,vector<vector<int>>& dp)
 {
     if(i==j)
@@ -35,6 +38,8 @@ int matrixMultiplication(vector<int> &arr, int N)
     return f(1,N-1,arr,dp);
 }
 // Tabulation
+// TC-> O(N*N*N)
+// SC-> O(N*N)
 int matrixMultiplication(vector<int> &arr, int N)
 {
     vector<vector<int>> dp(N,vector<int>(N,0));
