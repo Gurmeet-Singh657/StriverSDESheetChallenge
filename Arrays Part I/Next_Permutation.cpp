@@ -11,7 +11,7 @@ vector<int> nextPermutation(vector<int> &permutation, int n)
     int j=n-1;
     if(i>=0)
     {
-        while(j>i && permutation[j]<permutation[i])
+        while(j>i && permutation[j]<=permutation[i])
         {
            j--;
         }

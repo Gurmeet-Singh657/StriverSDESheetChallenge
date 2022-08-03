@@ -7,7 +7,7 @@ vector<int> makezarray(string s)
     int l=0,r=0;
     for(int i=1;i<n;i++)
     {
-        if(i>r)
+        if(i>r) // if we are not in z box
         {
             l=r=i;
             while(r<n && s[r]==s[r-l])
@@ -15,7 +15,7 @@ vector<int> makezarray(string s)
             z[i]=(r-l);
             r--;
         }
-        else
+        else // if we are in z box
         {
             int index=i-l;
             if(i+z[index]<=r)

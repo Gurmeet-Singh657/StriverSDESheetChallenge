@@ -21,7 +21,7 @@ string longestPalinSubstring(string str)
             }
             else if(end-start+1==maxlen && minindex>start)
             {
-                longest=str.substr(end-start+1);
+                longest=str.substr(start,end-start+1);
                 minindex=start;
             }
             start--;
@@ -41,7 +41,7 @@ string longestPalinSubstring(string str)
             }
             else if(end-start+1==maxlen && minindex>start)
             {
-                longest=str.substr(end-start+1);
+                longest=str.substr(start,end-start+1);
                 minindex=start;
             }
             start--;
